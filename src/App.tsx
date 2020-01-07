@@ -1,26 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Index from './test/home';
+import News from './test/detail';
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route
+            path="/"
+            component={() => (
+              <Index>
+                <Route exact path="/aaa" component={News} />
+              </Index>
+            )}
+          />
+          <Route exact path="/news" component={News} />
+          <Redirect from="*" to="/" />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
