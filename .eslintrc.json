@@ -1,3 +1,10 @@
 {
-    "extends": "react-app"
+  "extends": "react-app",
+  "rules": {
+    "no-return-assign": "off",
+    "no-unreachable": "off",
+    "no-unused-expressions": "off",
+    "camelcase": "off",
+    "semi":["error","always"]
   }
+}

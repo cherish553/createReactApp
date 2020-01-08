@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
-import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
-import logo from './logo.svg';
+import {
+  Switch,
+  Route,
+  BrowserRouter,
+  Redirect,
+  RouteComponentProps,
+  withRouter
+} from 'react-router-dom';
 import './App.scss';
 
-import Index from './test/home';
-import News from './test/detail';
-class App extends Component {
+import Home from 'test/home';
+import Detail from '@test/detail';
+import child from 'test/child';
+export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
           <Route
-            path="/"
+            path="/home"
             component={() => (
-              <Index>
-                <Route exact path="/aaa" component={News} />
-              </Index>
+              <Home>
+                <Route exact path="/home/child" component={child} />
+              </Home>
             )}
           />
-          <Route exact path="/news" component={News} />
-          <Redirect from="*" to="/" />
+          <Route exact path="/detail" component={Detail} />
+          <Redirect from="*" to="/home" />
         </Switch>
       </BrowserRouter>
     );
   }
 }
-
-export default App;

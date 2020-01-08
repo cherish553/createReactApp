@@ -1,5 +1,4 @@
 const { getBabelLoader } = require('react-app-rewired');
-
 const path = require('path');
 
 module.exports = function override(config, env) {
@@ -8,6 +7,5 @@ module.exports = function override(config, env) {
   babelLoader.include = [path.normalize(`${pwd}/src`)];
   // use babelrc
   babelLoader.options.babelrc = true;
-  
   return config;
 };

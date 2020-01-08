@@ -1,11 +1,23 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "@test/*": ["test/*"],
+      // "@/components/*": ["./src/components/*"],
+      // "@/interface/*": ["./src/interface/*"],
+      // "@/store/*": ["./src/store/*"],
+      // "@/pojo/*": ["./src/pojo/*"]
+      // // "@/utils/*": ["./src/utils/*"],
+      // // "@/package": ["./package.json"],
+      // // "@/project": ["./project.config.json"],
+    },
+    "experimentalDecorators": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
