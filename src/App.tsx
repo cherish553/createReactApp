@@ -11,11 +11,12 @@ import {
   // withRouter
 } from 'react-router-dom';
 import './App.scss';
-import Home from 'test/home';
-import Detail from '@test/detail';
-import child from 'test/child';
-import toDoList from 'toDoList';
+import Loadable from 'util/index';
 
+const child = Loadable(() => import('test/child'));
+const Detail = Loadable(() => import('@test/detail'));
+const toDoList = Loadable(() => import('toDoList'));
+const Home = Loadable(() => import('test/home'));
 class App extends Component {
   render() {
     return (
@@ -29,8 +30,16 @@ class App extends Component {
               </Home>
             )}
           />
-          <Route exact path="/detail" component={Detail} />
-          <Route exact path="/toDoList" component={toDoList} />
+          <Route
+            exact
+            path="/detail"
+            component={Detail}
+          />
+          <Route
+            exact
+            path="/toDoList"
+            component={toDoList}
+          />
           <Redirect from="*" to="/toDoList" />
         </Switch>
       </BrowserRouter>
