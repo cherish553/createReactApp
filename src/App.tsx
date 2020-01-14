@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
   BrowserRouter,
-  Redirect
+  Redirect,
   // withRouter
   // RouteComponentProps,
   // withRouter

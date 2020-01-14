@@ -15,7 +15,7 @@ export default class Detail extends React.Component<RouteComponentProps> {
 
   jump() {
     const {
-      history: { push }
+      history: { push },
     } = this.props;
     push('/news/haha');
   }

@@ -12,13 +12,13 @@ class Home extends React.Component {
     arr: [
       {
         name: 'mazekun',
-        id: 1
+        id: 1,
       },
       {
         name: 'likefan',
-        id: 2
-      }
-    ]
+        id: 2,
+      },
+    ],
   };
 
   componentDidMount() {
@@ -40,7 +40,7 @@ class Home extends React.Component {
             'rgba(255, 206, 86, 0.2)',
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(255, 159, 64, 0.2)',
           ],
           borderColor: [
             'rgba(255,99,132,1)',
@@ -48,26 +48,26 @@ class Home extends React.Component {
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255, 159, 64, 1)',
           ],
           borderWidth: 1,
-          data: [65, 59, 80, 81, 56, 55, 40]
-        }
-      ]
+          data: [65, 59, 80, 81, 56, 55, 40],
+        },
+      ],
     };
     const options = {
       scales: {
         xAxes: [
           {
-            stacked: true
-          }
+            stacked: true,
+          },
         ],
         yAxes: [
           {
-            stacked: true
-          }
-        ]
-      }
+            stacked: true,
+          },
+        ],
+      },
     };
     return (
       <div>

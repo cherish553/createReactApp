@@ -8,8 +8,7 @@ interface getCategory {
 
 export default {
   // 获取文章分类
-  postCategoryList: ({ page, size, ...rest }: getCategory) =>
-    http.post(`/category/list/${page}/${size}`, {
-      ...rest
-    })
+  postCategoryList: ({ page, size, ...rest }: getCategory) => http.post(`/category/list/${page}/${size}`, {
+    ...rest,
+  }),
 };

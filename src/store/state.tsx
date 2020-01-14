@@ -13,12 +13,12 @@ const tiger = 10000;
 // 这是reducer
 const reducer = (state = tiger, action: any) => {
   switch (action.type) {
-    // case '涨工资':
-    //   return state += 100;
-    // case '扣工资':
-    //   return state -= 100;
-    default:
-      return state;
+  // case '涨工资':
+  //   return state += 100;
+  // case '扣工资':
+  //   return state -= 100;
+  default:
+    return state;
   }
 };
 export default createStore(reducer);

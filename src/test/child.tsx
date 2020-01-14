@@ -8,7 +8,7 @@ export default class Child extends React.Component<RouteComponentProps> {
   // @SerializedName('aaaa')
   async jumps() {
     const {
-      history: { push }
+      history: { push },
     } = this.props;
     console.log(process.env.REACT_APP_BASE_URL);
     const data = await postCategoryList({ name: '', page: 1, size: 10 });
