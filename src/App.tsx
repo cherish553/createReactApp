@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { mapStateToProps, mapDispatchToProps } from 'store';
 import {
   Switch,
   Route,
   BrowserRouter,
-  Redirect,
-  RouteComponentProps,
-  withRouter
+  Redirect
+  // withRouter
+  // RouteComponentProps,
+  // withRouter
 } from 'react-router-dom';
 import './App.scss';
-
 import Home from 'test/home';
 import Detail from '@test/detail';
 import child from 'test/child';
-export default class App extends Component {
+import toDoList from 'toDoList';
+
+class App extends Component {
   render() {
     return (
       <BrowserRouter>
@@ -26,9 +30,11 @@ export default class App extends Component {
             )}
           />
           <Route exact path="/detail" component={Detail} />
-          <Redirect from="*" to="/home" />
+          <Route exact path="/toDoList" component={toDoList} />
+          <Redirect from="*" to="/toDoList" />
         </Switch>
       </BrowserRouter>
     );
   }
 }
+export default connect(mapStateToProps, mapDispatchToProps)(App);

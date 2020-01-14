@@ -1,11 +1,14 @@
 import React from 'react';
-import Child from './compoents/index';
 import { Bar } from 'react-chartjs-2';
-import style from './home.module.scss';
+import { connect } from 'react-redux';
+import { mapStateToProps, mapDispatchToProps } from 'store';
 import { Button, ButtonGroup } from 'reactstrap';
-export default class Home extends React.Component {
+import style from './home.module.scss';
+import Child from './compoents/index';
+
+class Home extends React.Component {
   state = {
-    name: 'aaa',
+    // name: 'aaa',
     arr: [
       {
         name: 'mazekun',
@@ -17,8 +20,15 @@ export default class Home extends React.Component {
       }
     ]
   };
+
+  componentDidMount() {
+    const { arr } = this.state;
+    // console.log(arr);
+  }
+
   render() {
-    const { name, arr } = this.state;
+    const { arr } = this.state;
+    // console.log(arr);
     const data = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
@@ -61,7 +71,7 @@ export default class Home extends React.Component {
     };
     return (
       <div>
-        {name && <div>{name}</div>}
+        {/* {name && <div>{name}</div>} */}
         <ButtonGroup>
           <Button color="primary">One</Button>
           <Button color="primary">Two</Button>
@@ -71,13 +81,14 @@ export default class Home extends React.Component {
         <div className={style.chi}>
           <Bar data={data} options={options} width={600} height={800} />
         </div>
-        {arr
-          .filter(item => item.id === 1)
+        {/* {arr
+          .filter((item) => item.id === 1)
           .map(({ id, name }) => (
             <div key={id}>{name}</div>
-          ))}
-        {this.props.children}
+          ))} */}
+        {/* {this.props.children} */}
       </div>
     );
   }
 }
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
